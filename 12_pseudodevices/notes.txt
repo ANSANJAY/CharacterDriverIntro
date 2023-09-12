@@ -1,0 +1,20 @@
+Pseudo-Devices
+==============================
+
+Devices in Linux (and other Unix clones) do not necessarily have to correspond to physical devices. These are known as pseudo-devices. For example,
+
+        -->     /dev/urandom generates a stream of pseudo-random numbers (try running head /dev/urandom in a terminal)
+
+        --> /dev/null produces no output, but accepts and discards any input (if you wanted to test your download speed without writing any data to your disk, you could download a file to /dev/null by running, e.g., wget http://some.website/big.file > /dev/null).
+
+	--> /dev/zero: Used by developers to create a file with no meaningful data but a particular size
+
+        /dev/null
+        Read : Returns End of file (read returns 0)
+        Write: Data written is discarded
+
+        /dev/zero:
+        Read: Returns endless bytes of zeroes (\0 characters)
+        Write: Data written is discarded
+
+File: drivers/char/mem.c has the implementation for this devices

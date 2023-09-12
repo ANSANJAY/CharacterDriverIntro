@@ -1,0 +1,37 @@
+struct file_operations:
+=============================
+
+Defined in : linux/fs.h
+Purpose: Holds pointers to functions defined by the driver that performs various operations on the device.
+
+struct file_operations {
+    struct module *owner;
+    loff_t (*llseek) (struct file *, loff_t, int);
+    ssize_t (*read) (struct file *, char __user *, size_t, loff_t *);
+    ssize_t (*write) (struct file *, const char __user *, size_t, loff_t *);
+    [...]
+    long (*unlocked_ioctl) (struct file *, unsigned int, unsigned long);
+    [...]
+    int (*open) (struct inode *, struct file *);
+    int (*flush) (struct file *, fl_owner_t id);
+    int (*release) (struct inode *, struct file *);
+    [...]
+
+E.g.
+struct file_operations fops = {
+.read = device_read,
+.write = device_write,
+.open = device_open,
+.release = device_release
+};
+
+
+The above fops structure has defined four function pointers : For reading, writing, opening and closing the device file
+
+It can be noticed that the signature of the function differs from the system call that the user uses. The operating system sits between the user and the device driver to simplify implementation in the device driver.
+
+
+open does not receive the parameter path or the various parameters that control the file opening mode.
+Similarly, read, write, release, ioctl, lseek do not receive as a parameter a file descriptor.
+Instead, these routines receive as parameters two structures: file and inode.
+

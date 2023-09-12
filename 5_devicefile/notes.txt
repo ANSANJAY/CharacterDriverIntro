@@ -1,0 +1,37 @@
+Creating Device File
+=======================
+
+Device file can be created in two ways
+	1. Manual
+	2. Automatic
+
+Manual
+===========
+
+We can create the device file manually by using mknod.
+
+$ mknod -m <permissions> <name> <device type> <major> <minor>
+
+-m <permissions> – optional argument that sets the permission bits of the new device file to permissions
+
+<name> – your device file name that should have full path (/dev/name)
+
+<device type> – Put c or b
+	c – Character Device
+
+	b – Block Device
+
+<major> – major number of your device
+
+<minor> – minor number of your driver
+
+Eg. 
+
+$sudo mknod -m 0644 /dev/mydevice c 244 10
+
+
+
+
+
+
+

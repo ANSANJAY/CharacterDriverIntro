@@ -1,0 +1,4 @@
+$sudo insmod ./hello.ko
+
+sudo insmod ./hello.ko base_minor=1048576 count=10 device_name=usb
+

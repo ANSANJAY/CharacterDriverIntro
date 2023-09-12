@@ -1,0 +1,29 @@
+Create a device and register it with sysfs
+
+struct device * device_create(struct class *class,
+ 			      struct device *parent,
+			      dev_t  devt,
+			      void *drv_data,
+ 			      const char *fmt, 
+		 	      ...);
+
+This function can be used by char device classes. 
+
+A struct device will be created in sysfs, registered to the specified class.
+
+class 	-->	pointer to the struct class that this device should be registered to
+
+parent  -->	pointer to the parent struct device of this new device, if any
+
+devt    --> 	the dev_t for the char device to be added
+
+fmt	-->     string for the device's name
+
+...	-->	variable arguments
+
+If a pointer to a parent struct device is passed in, the newly created struct device will be a child of that device in sysfs. 
+
+device_destroy — removes a device that was created with device_create
+
+
+void device_destroy (struct class *class, dev_t devt);
