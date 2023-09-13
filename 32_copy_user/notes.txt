@@ -1,1 +1,0 @@
-The *offp should be updated after each data transfer to represent the current file position after successful completion of the system call
