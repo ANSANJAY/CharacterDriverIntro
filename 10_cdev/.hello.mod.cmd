@@ -1,0 +1,1 @@
+cmd_/home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/10_cdev/hello.mod := printf '%s\n'   hello.o | awk '!x[$$0]++ { print("/home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/10_cdev/"$$0) }' > /home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/10_cdev/hello.mod
