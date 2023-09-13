@@ -1,1 +1,0 @@
-cmd_/home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/06_devicefile/modules.order := {   echo /home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/06_devicefile/hello.o; :; } > /home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/06_devicefile/modules.order

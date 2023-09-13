@@ -1,1 +1,0 @@
-/home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/06_devicefile/hello.o
