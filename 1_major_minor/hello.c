@@ -9,14 +9,21 @@ MODULE_LICENSE("GPL");
 // Initialization function executed when the module is loaded
 static int test_hello_init(void)
 {
-    dev_t devicenumber; // Declares a device type variable
+    dev_t devicenumber=10; // Declares a device type variable
 
     // Print uninitialized device numbers
     printk("Major Number :%d\n", MAJOR(devicenumber));
     printk("Minor Number :%d\n", MINOR(devicenumber));
 
-    // Manually set devicenumber to 49 and then print its major and minor parts
-    devicenumber = 49;
+    // Manually set devicenumber to 1048576 and then print its major and minor parts
+    // minor number is of represented in 20 bits 
+    // max number it can hold is 2^20 -1 = 1,048,575
+    // once minor number overflows , major number is populated 
+    // expected output 
+ //Major Number :1
+ //Minor Number :0
+ 
+    devicenumber = 1048576;
     printk("Major Number :%d\n", MAJOR(devicenumber));
     printk("Minor Number :%d\n", MINOR(devicenumber));
 

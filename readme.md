@@ -1,8 +1,21 @@
 ## Concepts 📘
 
+```SQL
++-------------------+     +---------------------+
+|   Application     |     |      Kernel         |
+|                   |     |                     |
+|     +-------+     |     |     +---------+     |
+|     | User  |     |     |     |   I/O   |     |
+|     | Space |<--->|<--->|     |  Stack  |     |
+|     +-------+     |     |     +----^----+     |
+|                   |     |          |          |
++-------------------+     |   +------v------+   |
+                           |   | Character |   |
+                           |   |  Driver   |   |
+                           |   +-----------+   |
+                           +---------------------+
 
----
-
+```
 **Imagine you just bought a brand new printer for your computer. You plug it in, turn it on, and... nothing happens. Your computer doesn't magically know how to talk to this printer. It's like you trying to talk to someone who speaks a completely different language.**
 
 **Now, think of a device driver as a translator or an interpreter. For your computer and printer to understand each other, they need this translator. You install the printer's device driver (or translator) onto your computer. Once it's installed, the computer can 'speak' to the printer and give it tasks, like printing your documents or photos.**
@@ -30,30 +43,7 @@
 
 **In summary, while both character and block device drivers act as translators between your computer and devices, the former handles data bit by bit (like reading a letter), and the latter deals with data in larger chunks (like reading a book).**
 
---- 
-
-This explanation aims to present the basic difference between character and block device drivers in an understandable manner without diving into the intricate technicalities.
 ---
-
-**Imagine you have two types of friends you communicate with: pen pals and book club members.**
-
-1. **Pen Pals (Character Device Drivers):**
-   
-   - **Nature of Communication:** You write letters to your pen pals, exchanging news, ideas, or stories one letter at a time. The letters might be short or long, but they are usually read from beginning to end.
-   
-   - **Analogy:** This is like a **character device driver**. It deals with data one piece (or character) at a time. Just as you read letters character by character, a character device reads or writes data byte by byte. Examples include keyboards (where you press one key at a time) or mice (where movements and clicks are recorded one at a time).
-
-2. **Book Club Members (Block Device Drivers):**
-
-   - **Nature of Communication:** Instead of individual letters, you exchange entire books with your book club members. You discuss entire chapters or even the whole book in your meetings.
-   
-   - **Analogy:** This represents the **block device driver**. Instead of handling one piece of data at a time, it deals with data in large chunks or blocks. Just as you don't dissect a book letter by letter, but rather chapter by chapter, block devices read or write data in blocks. Examples include hard drives or USB drives, where data is often read or written in large chunks.
-
----
-
-**In summary, while both character and block device drivers act as translators between your computer and devices, the former handles data bit by bit (like reading a letter), and the latter deals with data in larger chunks (like reading a book).**
-
---- 
 
 ### Introduction to Linux Device Files
 
