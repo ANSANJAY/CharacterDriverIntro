@@ -1,1 +1,0 @@
-cmd_/home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/10_cdev/Module.symvers :=  scripts/mod/modpost       -o /home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/10_cdev/Module.symvers -T /home/anamika/Documents/learning/10_character_Device_Driver/CharacterDriverIntro/10_cdev/modules.order -i Module.symvers -e 
